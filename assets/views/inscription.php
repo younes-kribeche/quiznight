@@ -17,7 +17,6 @@ if ($conn) {
 $database->disconnect();
 ?>
 
-
 <!DOCTYPE html>
 <html lang="fr">
 
