@@ -1,3 +1,23 @@
+<?php
+require_once '../../Database.php';
+
+$database = new Database();
+
+// Établir la connexion
+$conn = $database->connect();
+
+// Vérifier si la connexion est établie
+if ($conn) {
+    
+} else {
+    echo 'Échec de la connexion.';
+}
+
+// Fermer la connexion
+$database->disconnect();
+?>
+
+
 <!DOCTYPE html>
 <html lang="fr">
 
