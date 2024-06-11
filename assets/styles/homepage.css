@@ -1,0 +1,60 @@
+#homepage_section{
+  padding-top: 15svh;
+}
+
+#funny_text,
+#welcome_text{
+  text-align: center;
+  color: aliceblue;
+  margin: 0;
+}
+
+#welcome_text{
+  font-family: "inter", sans-serif;
+  font-size: 48px;
+  font-weight: 700;
+  margin-bottom: 1svh;
+}
+
+#funny_text{
+  font-family: "roboto condensed", sans-serif;
+  font-size: 25px;
+  font-style: italic;
+  font-weight: 10;
+}
+
+#name_div_tag{
+  text-align: center;
+  color: aliceblue;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-top: 5svh;
+}
+
+.div_tag{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+h4{
+  
+  font-family: "inter", sans-serif;
+  background-color: rgba(113, 124, 133, 0.327);
+  padding: 1svw;
+  margin: 0;
+  width: 10svw;
+  border-radius: 20px;
+}
+
+
+
+.img_tag{
+  width: 12svw;
+  border: solid 5px #7000A4;
+  border-radius: 50px;
+  margin: 1svw 1svw 0 1svw;
+}
+
