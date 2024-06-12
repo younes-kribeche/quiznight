@@ -29,3 +29,8 @@ form button {
     border-radius: 10px;
     cursor: pointer;
 }
+
+form h1{
+    font-size: 3em;
+    text-shadow: 3px 2px black;
+}
