@@ -1,14 +1,32 @@
 <?php
 require_once '../../Database.php';
 
+// Démarrer la session
+session_start();
+
 $database = new Database();
 
 // Établir la connexion
 $conn = $database->connect();
 
-// Fermer la connexion
+// Définir la base de l'URL et les paramètres
+$listPage = 'http://localhost/quiznight/assets/views/listpage.php';
+$param = 'tag_id';
+
+// Définir la valeur de l'url
+$tagGeography = 1;
+$tagEntertainment = 2;
+$tagHistory = 3;
+$tagArtAndLiterature = 4;
+$tagScienceAndNature = 5;
+$tagSportsAndLeisures = 6;
+
+// Construire l'URL complète
+$url = $listPage . '?' . $param;
+
 $database->disconnect();
 ?>
+
 
 <!DOCTYPE html>
 <html lang="fr">
@@ -37,27 +55,39 @@ $database->disconnect();
                 <div id="name_div_tag">
                 <div class = "div_tag">
                   <h4>Géographie</h4>
-                  <img src="../img/img_geography.jpg" alt="img_tag_geography" class = "img_tag">
+                  <a href="<?php echo htmlspecialchars($url . '=' . $tagGeography); ?>">
+                    <img src="../img/img_geography.jpg" alt="img_tag_geography" class = "img_tag">
+                  </a>
                 </div>
                 <div class = "div_tag">
                   <h4>Divertissement</h4>
-                  <img src="../img/img_entertainment.jpg" alt="img_tag_entertainment" class = "img_tag">
+                  <a href="<?php echo htmlspecialchars($url . '=' . $tagEntertainment); ?>">
+                    <img src="../img/img_entertainment.jpg" alt="img_tag_entertainment" class = "img_tag">
+                  </a>
                 </div>
                 <div class = "div_tag">
                   <h4>Histoire</h4>
+                  <a href="<?php echo htmlspecialchars($url . '=' . $tagHistory); ?>">
                   <img src="../img/img_history.jpg" alt="img_tag_history" class = "img_tag">
+                  </a>
                 </div>
                 <div class = "div_tag">
                   <h4>Art et Littérature</h4>
+                  <a href="<?php echo htmlspecialchars($url . '=' . $tagArtAndLiterature); ?>">
                   <img src="../img/img_art_and_literature.jpg" alt="img_tag_art_and_literature" class = "img_tag">
+                  </a>
                 </div>
                 <div class = "div_tag">
                   <h4>Science et Nature</h4>
-                  <img src="../img/img_science_and_nature.jpg" alt="img_tag_science_and_nature" class = "img_tag">
+                  <a href="<?php echo htmlspecialchars($url . '=' . $tagScienceAndNature); ?>">
+                    <img src="../img/img_science_and_nature.jpg" alt="img_tag_science_and_nature" class = "img_tag">
+                  </a>
                 </div>
                 <div class = "div_tag">
                   <h4>Sports et Loisirs</h4>
-                  <img src="../img/img_sports_and_leisures.jpg" alt="img_tag_sports_and_leisures" class = "img_tag">
+                  <a href="<?php echo htmlspecialchars($url . '=' . $tagSportsAndLeisures); ?>">
+                    <img src="../img/img_sports_and_leisures.jpg" alt="img_tag_sports_and_leisures" class = "img_tag">
+                  </a>
                 </div>
                 </div>
               </div>
