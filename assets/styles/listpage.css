@@ -1,0 +1,80 @@
+#listpage_section{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 15svh;
+}
+
+#list_quiz{
+  height: 50svh;
+  overflow-y: auto;
+  padding-right: 2svw;
+}
+
+.tag-name{
+  font-family: "inter", sans-serif;
+  color: aliceblue;
+  font-size: 37px;
+  font-weight: 700;
+  margin-top: 1svh;
+  text-shadow: #7000A4 2px 2px 2px;
+}
+
+.quiz-item{
+  display: flex;
+  font-family: "roboto condensed", sans-serif;
+  color: aliceblue;
+  width: 70svw;
+  margin: 2svh 0 2svh 0;
+  background-color: rgba(113, 124, 133, 0.251);
+  padding: 1svw;
+  border-radius: 20px;
+  border: solid 3px #7000A4;
+}
+
+.quiz-name{
+  font-size: larger;
+  font-style: oblique;
+  border-right:solid 2px rgb(12, 12, 12);
+  width: 20svw;
+
+}
+
+.quiz-created-at{
+  width: 10svw;
+  padding: 0 5svw 0 5svw; 
+  border-right:solid 2px rgb(12, 12, 12);
+
+}
+
+.quiz-creator-name{
+  display: flex;
+  width: 10svw;
+  padding: 0 5svw 0 5svw; 
+  border-right:solid 2px rgb(12, 12, 12);
+  text-align: center; 
+}
+
+.quiz-difficulty-name{
+  text-align: start;
+  padding-left: 2svw;
+  width: 15svw;
+}
+
+#error-msg{
+  width: 100%;
+  text-align: center;
+  margin: 0;
+}
+
+.before_quizContent{
+  margin: 0;
+  text-decoration: underline;
+}
+
+
+
+.quiz-item img {
+  width:3svw;
+  
+}

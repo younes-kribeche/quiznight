@@ -5,7 +5,6 @@
 #funny_text,
 #welcome_text{
   text-align: center;
-  color: aliceblue;
   margin: 0;
 }
 
@@ -14,6 +13,7 @@
   font-size: 48px;
   font-weight: 700;
   margin-bottom: 1svh;
+  color: aliceblue;
 }
 
 #funny_text{
@@ -21,6 +21,8 @@
   font-size: 25px;
   font-style: italic;
   font-weight: 10;
+  color: #a397b8;
+  text-shadow: #7000A4 1px 1px 1px;
 }
 
 #name_div_tag{
