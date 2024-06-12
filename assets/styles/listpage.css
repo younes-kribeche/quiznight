@@ -1,4 +1,4 @@
-#listpage_section{
+/* #listpage_section{
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -17,6 +17,7 @@
   font-size: 37px;
   font-weight: 700;
   margin-top: 1svh;
+  margin-bottom: 2svh;
   text-shadow: #7000A4 2px 2px 2px;
 }
 
@@ -57,7 +58,6 @@
 }
 
 .quiz-difficulty-name{
-  text-align: start;
   padding-left: 2svw;
   width: 15svw;
 }
@@ -79,3 +79,8 @@
   width:2.5svw;
   
 }
+
+::-webkit-scrollbar-thumb {
+  border-radius: 8px;
+  background: #c2c9d2;
+} */
