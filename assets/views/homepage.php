@@ -41,11 +41,9 @@ $database->disconnect();
 </head>
 
 <body>
-    <header>
-        <nav>
-            <img class="logo" src="../img/logo.png" alt="logo">
-        </nav>
-    </header>
+    <?php
+        include('header.php');
+    ?>
     <main>
         <section id="">
             <div class="section">
