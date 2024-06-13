@@ -1,4 +1,4 @@
-/* #listpage_section{
+#listpage_section{
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -6,7 +6,7 @@
 }
 
 #list_quiz{
-  height: 50svh;
+  height: 43svh;
   overflow-y: auto;
   padding-right: 2svw;
 }
@@ -21,21 +21,54 @@
   text-shadow: #7000A4 2px 2px 2px;
 }
 
+#filter-sort-section{
+  font-family: "inter", sans-serif;
+  color: aliceblue;
+}
+
+.filters{
+  font-family: "inter", sans-serif;
+  margin-bottom: 2svh;
+  border-radius: 5px;
+}
+
+#button_filter{
+  font-family: "inter", sans-serif ;
+  color: rgb(255, 255, 255);
+  border-radius: 20px;
+  padding: 0.3svw 0.8svw 0.3svw 0.8svw ;
+  background-color: #77299e;
+
+  box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+}
+
+#button_filter:hover{
+  cursor: pointer;
+  background-color: #7e4c97;
+
+}
+
+#button_filter:active{
+  background-color: #9273a1;
+
+}
+
 .quiz-item{
   display: flex;
   align-items: center;
   font-family: "roboto condensed", sans-serif;
-  color: aliceblue;
-  width: 70svw;
+  color: rgb(255, 255, 255);
+  width: 75svw;
   margin: 2svh 0 2svh 0;
   background-color: rgba(113, 124, 133, 0.251);
   padding: 1svw;
   border-radius: 20px;
   border: solid 3px #7000A4;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
 }
 
 .quiz-name{
-  font-size: larger;
+  font-size: 25px;
   font-style: oblique;
   border-right:solid 2px rgb(12, 12, 12);
   width: 20svw;
@@ -58,6 +91,7 @@
 }
 
 .quiz-difficulty-name{
+  text-align: center;
   padding-left: 2svw;
   width: 15svw;
 }
@@ -77,10 +111,17 @@
 
 .quiz-item img {
   width:2.5svw;
-  
-}
+  padding: 0 0.1svw 0 0.1svw;
+  background-color:#7000A4;
+  border-radius: 20px;
+  box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;}
 
 ::-webkit-scrollbar-thumb {
   border-radius: 8px;
-  background: #c2c9d2;
-} */
+  background: #0049aa;
+
+}
+
+a{
+  text-decoration: unset;
+}
