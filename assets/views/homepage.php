@@ -1,9 +1,6 @@
 <?php
 require_once '../../Database.php';
 
-// Démarrer la session
-session_start();
-
 $database = new Database();
 
 // Établir la connexion
@@ -37,6 +34,7 @@ $database->disconnect();
     <link href='https://fonts.googleapis.com/css?family=Roboto Condensed' rel='stylesheet'>
     <link rel="stylesheet" href="../styles/global.css">
     <link rel="stylesheet" href="../styles/homepage.css">
+    <script src="../script/script.js" defer></script>
     <title>Quiz Night</title>
 </head>
 
