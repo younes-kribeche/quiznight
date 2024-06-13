@@ -1,4 +1,5 @@
 <?php
+
 require_once '../../Database.php';
 require_once '../Class/User.php';
 
@@ -32,7 +33,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
             }
             if($validUser){
                 session_start();
-                $_SESSION['username'] = $username;
+                $_SESSION['user'] = $username;
                 header('Location: ./homepage.php');
                 exit;
             }
@@ -54,15 +55,14 @@ $database->disconnect();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../styles/global.css">
     <link rel="stylesheet" href="../styles/inscription.css">
+    <script src="../script/script.js" defer></script>
     <title>Quiz Night</title>
 </head>
 
 <body>
-    <header>
-        <nav>
-            <img class="logo" src="../img/logo.png" alt="logo">
-        </nav>
-    </header>
+    <?php
+        include('header.php');
+    ?>
     <main>
         <section id="connexion">
             <div class="section">
