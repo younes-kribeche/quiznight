@@ -1,47 +1,51 @@
 <?php
-require_once '../../Database.php';
+    session_start();
 
-$error_message = null;
+    require_once '../../Database.php';
 
-$database = new Database();
+    $error_message = null;
 
-// Établir la connexion
-$conn = $database->connect();
+    $database = new Database();
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $email = $_POST['email'];
-    $password = $_POST['password'];
-    $username = $_POST['username'];
+    // Établir la connexion
+    $conn = $database->connect();
 
-    // Vérifier si la connexion est établie
-    if (isset($email, $password, $username) && $conn) {
-        // Vérifier si le mot de passe répond aux exigences
-        if (strlen($password) < 8 || !preg_match("#[0-9]+#", $password) || !preg_match("#[A-Z]+#", $password) || !preg_match("#[a-z]+#", $password) || !preg_match("/[!@#$%^&*()\-_=+]/", $password)) {
-            $error_message = "Le mot de passe doit contenir au moins 8 caractères, une majuscule, une minuscule, un chiffre et un caractère spécial.";
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        $email = $_POST['email'];
+        $password = $_POST['password'];
+        $username = $_POST['username'];
+
+        // Vérifier si la connexion est établie
+        if (isset($email, $password, $username) && $conn) {
+            // Vérifier si le mot de passe répond aux exigences
+            if (strlen($password) < 8 || !preg_match("#[0-9]+#", $password) || !preg_match("#[A-Z]+#", $password) || !preg_match("#[a-z]+#", $password) || !preg_match("/[!@#$%^&*()\-_=+]/", $password)) {
+                $error_message = "Le mot de passe doit contenir au moins 8 caractères, une majuscule, une minuscule, un chiffre et un caractère spécial.";
+            } else {
+                // Hachage du mot de passe
+                $hashed_password = password_hash($password, PASSWORD_DEFAULT);
+
+                // Préparer la requête d'insertion avec des paramètres de substitution
+                $query = "INSERT INTO user (email, password, name) VALUES (?, ?, ?)";
+                $stmt = $conn->prepare($query);
+
+                // Exécuter la requête en fournissant les valeurs directement
+                $stmt->execute([$email, $hashed_password, $username]);
+
+                // Rediriger l'utilisateur vers une page de confirmation
+                header("Location: inscription.php");
+                exit;
+            }
         } else {
-            // Hachage du mot de passe
-            $hashed_password = password_hash($password, PASSWORD_DEFAULT);
-
-            // Préparer la requête d'insertion avec des paramètres de substitution
-            $query = "INSERT INTO user (email, password, name) VALUES (?, ?, ?)";
-            $stmt = $conn->prepare($query);
-
-            // Exécuter la requête en fournissant les valeurs directement
-            $stmt->execute([$email, $hashed_password, $username]);
-
-            // Rediriger l'utilisateur vers une page de confirmation
-            header("Location: inscription.php");
-            exit;
+            echo 'Échec de la connexion.';
         }
-    } else {
-        echo 'Échec de la connexion.';
     }
-}
 
-// Fermer la connexion
-$database->disconnect();
+    // Fermer la connexion
+    $database->disconnect();
 ?>
 
+
+<!-----------------------------HTML------------------------------------>
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -50,6 +54,7 @@ $database->disconnect();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../styles/global.css">
     <link rel="stylesheet" href="../styles/inscription.css">
+    <script src="../script/script.js" defer></script>
     <title>Quiz Night</title>
 </head>
 

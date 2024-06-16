@@ -1,10 +1,12 @@
 <?php
-require_once '../../Database.php';
+    session_start();
 
-$database = new Database();
+    require_once '../../Database.php';
 
-// Établir la connexion
-$conn = $database->connect();
+    $database = new Database();
+
+    // Établir la connexion
+    $conn = $database->connect();
 
 // Requête pour obtenir tous les tags
 $tags = [];
