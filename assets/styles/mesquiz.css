@@ -1,0 +1,52 @@
+
+.mesquiz{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    padding-top: 50px;
+}
+
+.mesquiz h2{
+    text-align: center;
+    color: white;
+    font-size: 2.5rem;
+}
+
+.addButton{
+    background-color: rgba(255, 255, 255, 0);
+    border: none;
+    cursor: pointer;
+}
+
+.addButton img{
+    width: 300px;
+}
+
+.addButton_green{
+    background-color: rgba(255, 255, 255, 0);
+    border: none;
+}
+
+.addButton_green img{
+    width: 100px;
+}
+
+
+/*TABLEAU*/
+
+.difficultyImg{
+    width: 50px;
+}
+
+table{
+    margin-top: 100px;
+    color: white;
+    width: 100%;
+}
+
+td, th{
+    border: 1px solid white;
+}

@@ -1,30 +1,33 @@
 <?php
-require_once '../../Database.php';
+    session_start();
 
-$database = new Database();
+    require_once '../../Database.php';
 
-// Établir la connexion
-$conn = $database->connect();
+    $database = new Database();
 
-// Définir la base de l'URL et les paramètres
-$listPage = 'http://localhost/quiznight/assets/views/listpage.php';
-$param = 'tag_id';
+    // Établir la connexion
+    $conn = $database->connect();
 
-// Définir la valeur de l'url
-$tagGeography = 1;
-$tagEntertainment = 2;
-$tagHistory = 3;
-$tagArtAndLiterature = 4;
-$tagScienceAndNature = 5;
-$tagSportsAndLeisures = 6;
+    // Définir la base de l'URL et les paramètres
+    $listPage = 'http://localhost/quiznight/assets/views/listpage.php';
+    $param = 'tag_id';
 
-// Construire l'URL complète
-$url = $listPage . '?' . $param;
+    // Définir la valeur de l'url
+    $tagGeography = 1;
+    $tagEntertainment = 2;
+    $tagHistory = 3;
+    $tagArtAndLiterature = 4;
+    $tagScienceAndNature = 5;
+    $tagSportsAndLeisures = 6;
 
-$database->disconnect();
+    // Construire l'URL complète
+    $url = $listPage . '?' . $param;
+
+    $database->disconnect();
 ?>
 
 
+<!-----------------------------HTML------------------------------------>
 <!DOCTYPE html>
 <html lang="fr">
 

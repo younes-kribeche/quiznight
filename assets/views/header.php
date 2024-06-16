@@ -1,5 +1,4 @@
 <?php
-    session_start();
 
     function getStatus() {
         if (!isset($_SESSION['user'])) {
@@ -25,9 +24,9 @@
 <header>
     <nav class='burgerNav'>
         <a href="homepage.php"><img class="logo" src="../img/logo.png" alt="logo"></a>
-        <img src="../img/burgerOpen.png" alt="burgerIcon" onclick="changeSrc(); classChange('hidemenu', 'showmenu', 'menu'); classChange('burgerButtonOpen burgerPop2', 'burgerButtonClose burgerPop', 'open-nav')" class="burgerButtonClose burgerPop" id="open-nav"/>
+        <img src="../img/burgerOpen.png" alt="burgerIcon" onclick="changeSrc(); classChange('hidemenu', 'showmenu', 'menu'); classChange('burgerButtonOpen', 'burgerButtonClose', 'open-nav'); classChange('burgerPop', 'burgerPop2', 'open-nav')" class="burgerButtonClose burgerPop" id="open-nav"/>
         <ul class='hidemenu' id="menu">
-            <li><a href="">Mes Quiz</a></li>
+            <li><a href="mesquiz.php">Mes Quiz</a></li>
             <li><a href="">Paramètres</a></li>
             <li>
                 <?php if ($status == 'Connexion'): ?>

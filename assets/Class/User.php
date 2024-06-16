@@ -7,7 +7,8 @@ class User{
     private $conn;
 
     //Définition du constructeur
-    public function __construct(Database $db){
+    public function __construct(){
+        $db = new Database();
         $this->conn = $db->connect();
     }
 
@@ -16,6 +17,13 @@ class User{
         $stmt = $this->conn->prepare($sql);
         $stmt->execute();
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
+
+    public function findByName($username){
+        $sql = 'SELECT * FROM user WHERE name = :username';
+        $stmt = $this->conn->prepare($sql);
+        $stmt->execute([':username' => $username]);
+        return $stmt->fetchColumn();
     }
 
 }

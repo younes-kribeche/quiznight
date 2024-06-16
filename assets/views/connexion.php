@@ -1,5 +1,7 @@
 <?php
 
+session_start();
+
 require_once '../../Database.php';
 require_once '../Class/User.php';
 
@@ -47,6 +49,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
 $database->disconnect();
 ?>
 
+
+<!-----------------------------HTML------------------------------------>
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -73,6 +77,7 @@ $database->disconnect();
                     <input type="password" placeholder="Mot de passe" name="password" maxlength="30" required>
                     <?php if($error_message != null){echo ('<p style="color: red; width: 80%">'.$error_message.'</p>');} ?>
                     <button type="submit">Me connecter</button>
+                    <a href="inscription.php" style="color: white">Vous n'avez pas de compte? Créez en un ici!</a>
                 </form>
             </div>
         </section>

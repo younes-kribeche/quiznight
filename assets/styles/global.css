@@ -11,7 +11,7 @@ body {
 header {
     height: 15svh;
     width: 100%;
-    background-color: #7000A4;
+    background-image: url('../img/nav_background.jpg');
 }
 
 .logo {
@@ -42,6 +42,10 @@ nav a {
 /*------------*/
 /*-------------------BurgerNav*/
 /*------------*/
+
+#open-nav{
+    z-index: 999;
+}
 
 .burgerNav {
     display: flex;
@@ -80,6 +84,7 @@ nav a {
 
 .burgerButtonClose {
     z-index: 999;
+    cursor: pointer;
 }
 
 .burgerNav ul {
@@ -107,13 +112,11 @@ nav a {
 .showmenu {
     right: 0;
     transition: 1s;
-    cursor: pointer;
 }
 
 .hidemenu {
     right: -450px;
     transition: 1s;
-    cursor: pointer;
 }
 
 
@@ -123,13 +126,13 @@ nav a {
 
 main {
     background-color: #35325F;
-    height: calc(85vh - 60px);
+    min-height: calc(85vh - 60px);
     padding: 30px;
 }
 
 .section {
     background-color: #0E1235;
-    height: calc(85vh - 60px);
+    min-height: calc(85vh - 60px);
     border-radius: 10px;
 }
 
