@@ -6,24 +6,27 @@ $database = new Database();
 // Établir la connexion
 $conn = $database->connect();
 
-// Définir la base de l'URL et les paramètres
-$listPage = 'http://localhost/quiznight/assets/views/listpage.php';
-$param = 'tag_id';
-
-// Définir la valeur de l'url
-$tagGeography = 1;
-$tagEntertainment = 2;
-$tagHistory = 3;
-$tagArtAndLiterature = 4;
-$tagScienceAndNature = 5;
-$tagSportsAndLeisures = 6;
-
-// Construire l'URL complète
-$url = $listPage . '?' . $param;
+// Requête pour obtenir tous les tags
+$tags = [];
+$sql = "SELECT id, name FROM tag";
+$stmt = $conn->prepare($sql);
+$stmt->execute();
+while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+    $tags[] = $row;
+}
 
 $database->disconnect();
-?>
 
+// Tableau de correspondance des tags et des images
+$imageMap = [
+    'Géographie' => 'img_geography.jpg',
+    'Divertissement' => 'img_entertainment.jpg',
+    'Histoire' => 'img_history.jpg',
+    'Art et Littérature' => 'img_art_and_literature.jpg',
+    'Science et Nature' => 'img_science_and_nature.jpg',
+    'Sports et Loisirs' => 'img_sports_and_leisures.jpg'
+];
+?>
 
 <!DOCTYPE html>
 <html lang="fr">
@@ -49,42 +52,14 @@ $database->disconnect();
                 <h1 id="welcome_text">Bienvenue dans Quiz Night !</h1>
                 <h3 id="funny_text">Prêts à buzzer jusqu'au bout de la nuit ?</h3>
                 <div id="name_div_tag">
-                <div class = "div_tag">
-                  <h4>Géographie</h4>
-                  <a href="<?php echo htmlspecialchars($url . '=' . $tagGeography); ?>">
-                    <img src="../img/img_geography.jpg" alt="img_tag_geography" class = "img_tag">
-                  </a>
-                </div>
-                <div class = "div_tag">
-                  <h4>Divertissement</h4>
-                  <a href="<?php echo htmlspecialchars($url . '=' . $tagEntertainment); ?>">
-                    <img src="../img/img_entertainment.jpg" alt="img_tag_entertainment" class = "img_tag">
-                  </a>
-                </div>
-                <div class = "div_tag">
-                  <h4>Histoire</h4>
-                  <a href="<?php echo htmlspecialchars($url . '=' . $tagHistory); ?>">
-                  <img src="../img/img_history.jpg" alt="img_tag_history" class = "img_tag">
-                  </a>
-                </div>
-                <div class = "div_tag">
-                  <h4>Art et Littérature</h4>
-                  <a href="<?php echo htmlspecialchars($url . '=' . $tagArtAndLiterature); ?>">
-                  <img src="../img/img_art_and_literature.jpg" alt="img_tag_art_and_literature" class = "img_tag">
-                  </a>
-                </div>
-                <div class = "div_tag">
-                  <h4>Science et Nature</h4>
-                  <a href="<?php echo htmlspecialchars($url . '=' . $tagScienceAndNature); ?>">
-                    <img src="../img/img_science_and_nature.jpg" alt="img_tag_science_and_nature" class = "img_tag">
-                  </a>
-                </div>
-                <div class = "div_tag">
-                  <h4>Sports et Loisirs</h4>
-                  <a href="<?php echo htmlspecialchars($url . '=' . $tagSportsAndLeisures); ?>">
-                    <img src="../img/img_sports_and_leisures.jpg" alt="img_tag_sports_and_leisures" class = "img_tag">
-                  </a>
-                </div>
+                <?php foreach ($tags as $tag): ?>
+                    <div class="div_tag">
+                      <h4><?php echo htmlspecialchars($tag['name']); ?></h4>
+                      <a href="http://localhost/quiznight/assets/views/listpage.php?tag_id=<?php echo htmlspecialchars($tag['id']); ?>">
+                        <img src="../img/<?php echo $imageMap[$tag['name']]; ?>" alt="img_tag_<?php echo strtolower(str_replace(' ', '_', $tag['name'])); ?>" class="img_tag">
+                      </a>
+                    </div>
+                <?php endforeach; ?>
                 </div>
               </div>
             </div>
@@ -94,5 +69,4 @@ $database->disconnect();
 
     </footer>
 </body>
-
 </html>
