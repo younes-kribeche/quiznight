@@ -163,6 +163,7 @@ function setQuiz(){
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="../img/favicon.png">
     <script src="../script/script.js" async></script>
     <link rel="stylesheet" type="text/css" href="../styles/global.css">
     <link rel="stylesheet" type="text/css" href="../styles/newQuiz.css">
@@ -190,7 +191,7 @@ function setQuiz(){
                     </form>
                 <!------------------------SELECTION DES REPONSES----------------------------->
                 <?php elseif(!isset($_SESSION['reponses'])): ?>
-                    <h1>A présent créez 4 réponses: <br>- 1 vraie<br>- 3 fausses</h1>
+                    <h1 class="reponsesH1">A présent créez 4 réponses: <br>- 1 vraie<br>- 3 fausses</h1>
                     <form action="newQuiz.php" method="POST">
                         <input type="text" name="reponse1" class="trueAnswer" required>
                         <input type="text" name="reponse2" class="falseAnswer" required>
@@ -200,7 +201,7 @@ function setQuiz(){
                     </form>
                 <!------------------------FINALISATION DU QUIZ----------------------------->
                 <?php elseif(!isset($_SESSION['finalQuiz'])): ?>
-                    <h1>Finalisez votre Quiz!</h1>
+                    <h1 class="finalizeH1">Finalisez votre Quiz!</h1>
                     <form action="newQuiz.php" method="POST">
                         <div class="quizHeader">
                             <h1><?php echo $_SESSION['title']; ?></h1>

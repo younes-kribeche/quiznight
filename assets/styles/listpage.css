@@ -26,6 +26,11 @@
   color: aliceblue;
 }
 
+#filter-sort-section select, #filter-sort-section input{
+    padding: 5px;
+    border-radius: 5px;
+}
+
 .filters{
   font-family: "inter", sans-serif;
   margin-bottom: 2svh;

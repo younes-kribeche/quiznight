@@ -4,6 +4,7 @@ body {
     min-height: 100svh;
     overflow-x: hidden;
     font-family: "roboto condensed", sans-serif;
+}
 
 
 /*-----------------*/
@@ -30,14 +31,19 @@ nav ul {
 }
 
 nav li {
-    margin: 0 15px;
     list-style: none;
-    text-align: center;
+}
+
+nav li:hover{
+    background-color: blueviolet;
 }
 
 nav a {
     text-decoration: none;
     color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 /*------------*/
@@ -101,10 +107,7 @@ nav a {
     top: 0;
     background-color: #181A1B;
     padding-top: 150px;
-}
-
-.burgerNav li {
-    margin-left: 30px;
+    padding-left: 0;
 }
 
 .showmenu a,

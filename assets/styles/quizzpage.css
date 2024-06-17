@@ -109,11 +109,13 @@
 
 .response{
   margin: 2svw;
-  height: 4svh;
+  max-height: 6svh;
+  max-width: 25svw;
   background-color: #835796;
   border-radius: 20px;
   padding: 0.5svw;
   box-shadow: rgba(255, 255, 255, 0.16) 0px 1px 4px, rgb(163, 116, 160) 0px 0px 0px 3px;
+  overflow-wrap: break-word;
 }
 
 .responses.flex-center {

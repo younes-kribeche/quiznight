@@ -23,6 +23,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="../img/favicon.png">
     <script src="../script/script.js" defer></script>
     <link rel="stylesheet" type="text/css" href="../styles/global.css">
     <link rel="stylesheet" type="text/css" href="../styles/mesquiz.css">
@@ -52,7 +53,7 @@
                                 if ($difficulty) {
                                     $base64Image = base64_encode($difficulty);
                                     $difficultyName = $quiz->getDifficultyName($newquiz['id_difficulty']);
-                                    $imageSrc = 'data:image/jpeg;base64,' . $base64Image; // Remplacez 'jpeg' par le type MIME approprié de votre image
+                                    $imageSrc = 'data:image/jpeg;base64,' . $base64Image; 
                                 } else {
                                     $imageSrc = null;
                                 }

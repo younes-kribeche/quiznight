@@ -23,14 +23,54 @@ form input {
     border-radius: 5px;
 }
 
-form button {
-    padding: 15px;
-    width: 20%;
-    border-radius: 10px;
-    cursor: pointer;
-}
-
 form h1{
     font-size: 3em;
     text-shadow: 3px 2px black;
+}
+
+/*Bouton Qui suis-je?*/
+
+.connect_button {
+    background-color: #0E1235;
+    position: relative;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    height: 50px;
+    width: 140px;
+    overflow: hidden;
+    cursor: pointer;
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+}
+
+.btn_animation {
+    background-color: blueviolet;
+    display: flex;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    top: 100px;
+    left: 0;
+    height: 100px;
+    width: 140px;
+    z-index: 2;
+    border-radius: 20px;
+}
+
+.connect_button:hover>.btn_animation {
+    top: -30px;
+    transition: top 0.8s;
+}
+
+.p_connect {
+    position: absolute;
+    z-index: 10;
+    top: 50%;
+    left: 50%;
+    /* Positionner à 50% du conteneur parent */
+    transform: translate(-50%, -50%);
+    /* Centrer en fonction de la largeur de l'élément */
+    margin: 0;
+    width: 100%;
 }

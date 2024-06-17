@@ -57,6 +57,7 @@ $database->disconnect();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="../img/favicon.png">
     <link rel="stylesheet" href="../styles/global.css">
     <link rel="stylesheet" href="../styles/inscription.css">
     <script src="../script/script.js" defer></script>
@@ -76,7 +77,10 @@ $database->disconnect();
                     <input type="text" placeholder="Nom d'utilisateur" name="username" minlength="6" maxlength="15" required>
                     <input type="password" placeholder="Mot de passe" name="password" maxlength="30" required>
                     <?php if($error_message != null){echo ('<p style="color: red; width: 80%">'.$error_message.'</p>');} ?>
-                    <button type="submit">Me connecter</button>
+                    <button class="connect_button" type="submit">
+                        <p class="p_connect">Me connecter</p>
+                        <div class="btn_animation"></div>
+                    </button>
                     <a href="inscription.php" style="color: white">Vous n'avez pas de compte? Créez en un ici!</a>
                 </form>
             </div>

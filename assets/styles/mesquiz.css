@@ -68,6 +68,9 @@ td, th{
     border-radius: 5px;
     background-color: blueviolet;
     cursor: pointer;
+    width: 150px;
+    height: 60px;
+    font-size: 1.1rem;
 }
 
 .connexionButton a{
