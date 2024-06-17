@@ -32,7 +32,7 @@
                 $stmt->execute([$email, $hashed_password, $username]);
 
                 // Rediriger l'utilisateur vers une page de confirmation
-                header("Location: inscription.php");
+                header("Location: connexion.php");
                 exit;
             }
         } else {

@@ -121,15 +121,12 @@ $database->disconnect();
     <link href='https://fonts.googleapis.com/css?family=Roboto Condensed' rel='stylesheet'>
     <link rel="stylesheet" href="../styles/global.css">
     <link rel="stylesheet" href="../styles/quizzpage.css">
+    <script src="../script/script.js" defer></script>
     <title>Quiz Night</title>
 </head>
 
 <body>
-    <header>
-        <nav>
-            <img class="logo" src="../img/logo.png" alt="logo">
-        </nav>
-    </header>
+<?php include('./header.php'); ?>
     <main>
         <section id="">
             <div class="section">

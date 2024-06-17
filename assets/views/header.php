@@ -27,7 +27,6 @@
         <img src="../img/burgerOpen.png" alt="burgerIcon" onclick="changeSrc(); classChange('hidemenu', 'showmenu', 'menu'); classChange('burgerButtonOpen', 'burgerButtonClose', 'open-nav'); classChange('burgerPop', 'burgerPop2', 'open-nav')" class="burgerButtonClose burgerPop" id="open-nav"/>
         <ul class='hidemenu' id="menu">
             <li><a href="mesquiz.php">Mes Quiz</a></li>
-            <li><a href="">Paramètres</a></li>
             <li>
                 <?php if ($status == 'Connexion'): ?>
                     <a href="connexion.php"><?php echo $status; ?></a>

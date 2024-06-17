@@ -29,7 +29,7 @@ function setQuestion() {
     if (!empty($_POST['question'])) {
         $qid = $_SESSION['qid'];
         $question = [
-            'value' => htmlspecialchars($_POST['question']),
+            'value' => $_POST['question'],
             'questionId' => $qid
         ];
 
@@ -97,9 +97,11 @@ function setQuiz(){
         $userId = $user->findByName($_SESSION['user']);
         $category = $_POST['category'];
         $difficulty = $_POST['difficulty'];
+        $date_heure = new DateTime();
+        $date = $date_heure->format('Y-m-d H:i:s');
         
         //Exécution
-        $quiz->createQuiz($title, $userId, $category, $difficulty);
+        $quiz->createQuiz($title, $date, $userId, $category, $difficulty);
 
         //---------------------
         //----------------------Envoyoyer les questions en bdd

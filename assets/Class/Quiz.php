@@ -13,10 +13,10 @@ class Quiz {
         $this->conn = $db->connect();
     } 
 
-    public function createQuiz(string $title, int $userid, int $idTag, int $idDifficulty) {
-        $query = "INSERT INTO quizz (name, id_user, id_tag, id_difficulty) VALUES (:title, :userid, :idTag, :idDifficulty)";
+    public function createQuiz(string $title, $today, int $userid, int $idTag, int $idDifficulty) {
+        $query = "INSERT INTO quizz (name, created_at, id_user, id_tag, id_difficulty) VALUES (:title, :today, :userid, :idTag, :idDifficulty)";
         $stmt = $this->conn->prepare($query);
-        $stmt->execute([':title' => $title, ':userid' => $userid, ':idTag' => $idTag, ':idDifficulty' => $idDifficulty]);
+        $stmt->execute([':title' => $title, ':today' => $today, ':userid' => $userid, ':idTag' => $idTag, ':idDifficulty' => $idDifficulty]);
     }
 
     public function getQuiz(int $userId){

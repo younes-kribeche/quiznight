@@ -47,7 +47,6 @@
                         
                             foreach($userQuiz as $newquiz){
                                 $quizId = $quiz->getQuizIdByName($newquiz['name']);
-                                var_dump($quizId);
                                 $category = $quiz->getCategory($newquiz['id_tag']);
                                 $difficulty = $quiz->getDifficultyImg($newquiz['id_difficulty']);
                                 if ($difficulty) {

@@ -1,9 +1,4 @@
 <?php
-    session_start();
-
-    require_once('../Class/Quiz.php');
-
-    $quiz = new Quiz();
-
-    $quiz->addResponse('Bonjour', 1, 12);
+    $date_aujourd_hui = date('d/m/Y');
+    echo $date_aujourd_hui;
 ?>

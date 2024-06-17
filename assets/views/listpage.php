@@ -146,6 +146,7 @@ $database->disconnect();
     <link href='https://fonts.googleapis.com/css?family=Roboto Condensed' rel='stylesheet'>
     <link rel="stylesheet" href="../styles/global.css">
     <link rel="stylesheet" href="../styles/listpage.css">
+    <script src="../script/script.js" defer></script>
     <title>Quiz Night</title>
 </head>
 
