@@ -59,8 +59,15 @@ class Quiz {
         return $stmt->fetchColumn();
     }
 
-    public function getDifficulty(int $difficultyId){
+    public function getDifficultyImg(int $difficultyId){
         $query = "SELECT img FROM difficulty WHERE id = :difficultyId";
+        $stmt = $this->conn->prepare($query);
+        $stmt->execute([':difficultyId' => $difficultyId]);
+        return $stmt->fetchColumn();
+    }
+
+    public function getDifficultyName(int $difficultyId){
+        $query = "SELECT name FROM difficulty WHERE id = :difficultyId";
         $stmt = $this->conn->prepare($query);
         $stmt->execute([':difficultyId' => $difficultyId]);
         return $stmt->fetchColumn();
