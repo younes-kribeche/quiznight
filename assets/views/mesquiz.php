@@ -39,6 +39,7 @@
                 <div class="mesquiz">
                     <?php if(!isset($_SESSION['user'])): ?>
                         <h1>Vous devez être connecté pour voir vos Quiz!</h1>
+                        <button class="connexionButton"><a href="./connexion.php">Me connecter</a></button>
                     <?php elseif(isset($_SESSION['user']) && $userQuiz == null): ?>
                         <h2>Vous n’avez aucun quiz pour l’instant! <br>Qu’attendez vous pour en créer un? <br>👇</h2>
                         <button class="addButton"><a href="newQuiz.php"><img src="../img/addButton.png" alt="addButton"></a></button>
@@ -76,7 +77,7 @@
                             </tbody>
                         </table>
                         <div>
-                            <button class="addButton_green"><img src="../img/addButton_green.png" alt="addButton"></button>
+                            <button class="addButton_green"><a href="./newQuiz.php"><img src="../img/addButton_green.png" alt="addButton"></a></button>
                         </div>
                     <?php endif ?>
                 </div>
