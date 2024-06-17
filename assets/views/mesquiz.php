@@ -1,6 +1,7 @@
 <?php
     session_start();
 
+    require_once '../../Database.php';
     require_once('../Class/Quiz.php');
     require_once('../Class/User.php');
 
@@ -14,8 +15,6 @@
         $userId = $username;
         $userQuiz = $quiz->getQuiz($userId);
     }
-
-
 ?>
 
 <!-----------------------------HTML------------------------------------>
@@ -45,7 +44,10 @@
                         <button class="addButton"><a href="newQuiz.php"><img src="../img/addButton.png" alt="addButton"></a></button>
                     <?php else: ?>
                         <?php
+                        
                             foreach($userQuiz as $newquiz){
+                                $quizId = $quiz->getQuizIdByName($newquiz['name']);
+                                var_dump($quizId);
                                 $category = $quiz->getCategory($newquiz['id_tag']);
                                 $difficulty = $quiz->getDifficultyImg($newquiz['id_difficulty']);
                                 if ($difficulty) {
@@ -56,7 +58,7 @@
                                     $imageSrc = null;
                                 }
                                 echo '
-                                <a href="$listPage?$param=$quiz_id">
+                                <a href="quizzpage.php?quizz_id='.$quizId.'">
                                 <div class="quiz-item">
                                     <div class="quiz-name">'.$newquiz['name'].'</div>
                                     <div class="quiz-created-at">Créé le: &nbsp;<strong>'.$newquiz['created_at'].'</strong></div>

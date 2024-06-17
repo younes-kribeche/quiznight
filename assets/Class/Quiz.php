@@ -26,6 +26,13 @@ class Quiz {
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 
+    public function getQuizIdByName(string $quizName){
+        $query = "SELECT id FROM quizz WHERE name = :quizName";
+        $stmt = $this->conn->prepare($query);
+        $stmt->execute([':quizName' => $quizName]);
+        return $stmt->fetchColumn();
+    }
+
     public function getQuestions(int $quizId){
         $query = "SELECT * FROM question WHERE id_quizz = :quizId";
         $stmt = $this->conn->prepare($query);
