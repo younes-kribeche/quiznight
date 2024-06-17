@@ -146,6 +146,11 @@ function setQuiz(){
             }
         }
 
+        //Enfin on se dirige vers le end
+        $_SESSION['finalQuiz'] = 'test';
+        echo '<script type="text/javascript">
+        window.location.reload();
+        </script>';
     }
 }
 
@@ -226,13 +231,15 @@ function setQuiz(){
                         </div>
                         <?php setQuiz(); ?>
                         <input type="hidden" name="finishedQuiz" value="1">
-                        <button type="submit">Terminer</button>
+                        <button type="submit" class="finishButton">Terminer</button>
                     </form>
                     <form action="newQuiz.php" method="POST">
                         <input type="hidden" name="new_question" value="1">
-                        <button type="submit">Ajouter une question</button>
+                        <button type="submit" class="addQuestionButton">Ajouter une question</button>
                     </form>
                 <?php else: ?>
+                    <h1>Félicitations! Votre Quiz a été créé avec succès!</h1>
+                    <h2>Vous allez être redirigés vers l'accueil dans un instant.</h2>
                     <script>
                         function delayedRedirection(link){
                             setTimeout(function(){
@@ -241,8 +248,15 @@ function setQuiz(){
                         }
                         delayedRedirection('./mesquiz.php');
                     </script>
-                    <h1>Félicitations! Votre Quiz a été créé avec succès!</h1>
-                    <h2>Vous allez être redirigés ver l'accueil dans un instant.</h2>
+                    <?php 
+                        unset($_SESSION['title']);
+                        unset($_SESSION['question']);
+                        unset($_SESSION['allQuestions']);
+                        unset($_SESSION['qid']);
+                        unset($_SESSION['reponses']);
+                        unset($_SESSION['allReponses']);
+                        unset($_SESSION['finalQuiz']);
+                    ?>
                 <?php endif ?>
             </div>
         </section>

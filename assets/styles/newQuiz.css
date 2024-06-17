@@ -81,10 +81,26 @@ select{
     padding: 10px;
     border-radius: 5px;
     color: white;
-    width: 1000px;
+    width: 100%;
 }
 
 .questionRow{
     display: flex;
     align-items: center;
+}
+
+.addQuestionButton{
+    padding: 10px;
+    color: white;
+    background-color: blueviolet;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.finishButton{
+    padding: 10px;
+    color: white;
+    background-color: rgb(47, 255, 64);
+    border-radius: 10px;
+    cursor: pointer;
 }

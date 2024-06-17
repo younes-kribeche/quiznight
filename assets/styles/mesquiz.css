@@ -1,3 +1,9 @@
+.section{
+    display: flex;
+    align-items: center;
+    color: white;
+}
+
 
 .mesquiz{
     display: flex;
@@ -7,6 +13,10 @@
     width: 100%;
     height: 100%;
     padding-top: 50px;
+}
+
+h1{
+    font-size: 3rem;
 }
 
 .mesquiz h2{
@@ -28,6 +38,7 @@
 .addButton_green{
     background-color: rgba(255, 255, 255, 0);
     border: none;
+    cursor: pointer;
 }
 
 .addButton_green img{
@@ -49,4 +60,17 @@ table{
 
 td, th{
     border: 1px solid white;
+}
+
+/*--CONNEXION BUTTON----*/
+.connexionButton{
+    padding: 10px;
+    border-radius: 5px;
+    background-color: blueviolet;
+    cursor: pointer;
+}
+
+.connexionButton a{
+    text-decoration: none;
+    color: white;
 }
